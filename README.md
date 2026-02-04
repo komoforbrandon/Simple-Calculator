@@ -1,5 +1,5 @@
 # Simple Calculator
-This is a simple calculator web app developed using **HTML, CSS** and **JS**. Users of the calculator can perform addition, division, substraction and modulo operations with the it.You Can try it. 
+This is a simple calculator web app developed using **HTML, CSS** and **JS**. Users of the calculator can perform addition, division, substraction and modulo operations with the it.You Can try it.
 
 ---
 ## Project Architecture
@@ -11,8 +11,8 @@ This is a simple calculator web app developed using **HTML, CSS** and **JS**. Us
 
 ```
 ---
-## Preview and How to Use.
-open the index.html from github or you can open the deployed link to use it.
+## Preview and How to Use
+open the index.html from Github or you can open the deployed link to use it.
 - Link : [https://komoforbrandon.github.io/Simple-Calculator/]
 
 ---

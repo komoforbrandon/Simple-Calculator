@@ -25,7 +25,7 @@ header img {
 main {
   width: fit-content;
   margin: auto;
-  color:white;
+  color: #fff;
   line-height: 28px;
 }
 
@@ -80,10 +80,10 @@ tr td.operator {
 
 tr td.operator:hover {
   background-color: #ff9f0a;
-  box-shadow: 0px 2px 8px #ff9f0a;
+  box-shadow: 1px 2px 8px #ff9f0a;
 }
 
-footer p{
+footer p {
   width: 100%;
   margin: auto;
   text-align: center;
@@ -93,25 +93,25 @@ footer p{
 }
 
 @media (max-width: 380px) {
- header {
+  header {
     width: 100%;
- }
+  }
 
   main section {
     width: 100%;
     margin: auto;
   }
 
- tr td {
+  tr td {
     width: 35px !important;
     font-size: 18px;
     height: 28px !important;
     font-weight: 600;
     padding: 20px;
- }
+  }
 
- .header-btn td {
+  .header-btn td {
     font-size: 18px;
     font-weight: 700;
- }
+  }
 }
