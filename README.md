@@ -12,7 +12,7 @@ This is a simple calculator web app developed using **HTML, CSS** and **JS**. Us
 ```
 ---
 ## Preview and How to Use
-open the index.html from Github or you can open the deployed link to use it.
+open the index.html from GitHub or you can open the deployed link to use it.
 - Link : [https://komoforbrandon.github.io/Simple-Calculator/]
 
 ---
