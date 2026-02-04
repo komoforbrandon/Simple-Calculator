@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="assets/fav.png" type="image/png">
 </head>
+
 <body>
-    
+    <header>
+        <img src="assets/menu.png" alt="menu icon">
+        <img src="assets/cal.png" alt="Calculator icon">
+    </header>
+    <main>
+        <section class="input-answers">
+            <p id="answer">0</p>
+            <p id="input">0</p>
+        </section>
+        <section class="cal-values">
+            <table>
+                <tr class="header-btn">
+                    <td data-value="del" class="btn">&#9003;</td>
+                    <td data-value="AC" class="btn">AC</td>
+                    <td data-value="%" class="btn">&percnt;</td>
+                    <td data-value="/" class="btn operator">&div;</td>
+                </tr>
+                <tr>
+                    <td data-value="5" class="btn">7</td>
+                    <td data-value="8" class="btn">8</td>
+                    <td data-value="9" class="btn">9</td>
+                    <td data-value="*" class="btn operator">&times;</td>
+                </tr>
+                <tr>
+                    <td data-value="4" class="btn">4</td>
+                    <td data-value="5" class="btn">5</td>
+                    <td data-value="6" class="btn">6</td>
+                    <td data-value="-" class="btn operator">&minus;</td>
+                </tr>
+                <tr>
+                    <td data-value="1" class="btn">1</td>
+                    <td data-value="2" class="btn">2</td>
+                    <td data-value="3" class="btn">3</td>
+                    <td data-value="+" class="btn operator">&plus;</td>
+                </tr>
+                <tr>
+                    <td data-value="+/-" class="btn"><sup>&plus;</sup>/&minus;</td>
+                    <td data-value="0" class="btn">0</td>
+                    <td data-value="." class="btn">&period;</td>
+                    <td data-value="=" class="btn operator">&equals;</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;KBrandN Simple Calculator</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #fff;
+}
+
+body {
+  background-color: #000;
+}
+
+header {
+  width: 23rem;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+header img {
+  width: 40px;
+  height: fit-content;
+  cursor: pointer;
+}
+
+main {
+  width: fit-content;
+  margin: auto;
+  color:white;
+  line-height: 28px;
+}
+
+#answer {
+  text-align: end;
+  color: #c0bdbd;
+  font-size: 30px;
+  width: inherit;
+  margin-right: 18px;
+}
+
+#input {
+  font-size: 35px;
+  text-align: end;
+  margin-right: 18px;
+  width: inherit;
+  overflow: hidden;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 6px;
+}
+
+tr td {
+  background-color: #353535f1;
+  padding: 27px;
+  width: 35px;
+  font-size: 21px;
+  height: 33px;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+}
+
+.header-btn td {
+  background-color: #555;
+  font-size: 23px;
+}
+
+td:hover {
+  transform: scale(1.06);
+  background-color: #2b2a2a;
+  box-shadow: 6px 2px 14px #2b2b2b;
+}
+
+tr td.operator {
+  background-color: #f7a326;
+  width: 35px;
+}
+
+tr td.operator:hover {
+  background-color: #ff9f0a;
+  box-shadow: 0px 2px 8px #ff9f0a;
+}
+
+footer p{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding: 30px 0;
+  color: #555;
+  font-weight: 600;
+}
+
+@media (max-width: 380px) {
+ header {
+    width: 100%;
+ }
+
+  main section {
+    width: 100%;
+    margin: auto;
+  }
+
+ tr td {
+    width: 35px !important;
+    font-size: 18px;
+    height: 28px !important;
+    font-weight: 600;
+    padding: 20px;
+ }
+
+ .header-btn td {
+    font-size: 18px;
+    font-weight: 700;
+ }
+}
