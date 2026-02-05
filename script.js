@@ -12,7 +12,7 @@ btns.forEach(btn => {
       answerElt.textContent = answer
       display.textContent = parseInt(answerElt.textContent)
     } else if (newValue === 'del') {
-      const delVal = delFunc(display.textContent);
+      const delVal = delFunc(display.textContent)
       display.textContent = delVal
     } else {
       const displayVal = readValue(newValue, display.textContent)
@@ -42,6 +42,6 @@ function readValue (newval, dispVal) {
 }
 
 function OpertnFunc (ans) {
-  let express = ans
-  return new Function (`return ${express}`)()
+  const express = ans
+  return new Function(`return ${express}`)()
 }
