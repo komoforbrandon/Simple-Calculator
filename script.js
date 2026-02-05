@@ -8,38 +8,40 @@ btns.forEach(btn => {
       display.textContent = 0
       answerElt.textContent = 0
     } else if (newValue === '=') {
-      let answer = OpertnFunc(display.textContent);
+      const answer = OpertnFunc(display.textContent)
       answerElt.textContent = answer
       display.textContent = parseInt(answerElt.textContent)
     } else if (newValue === 'del') {
-      let del_val = delFunc(display.textContent);
-      display.textContent = del_val
+      const delVal = delFunc(display.textContent);
+      display.textContent = delVal
     } else {
-      let display_val = readValue(newValue, display.textContent)
-      display.textContent = display_val
+      const displayVal = readValue(newValue, display.textContent)
+      display.textContent = displayVal
     }
   })
 })
 
-function delFunc(delval) {
+function delFunc (delval) {
   if (delval.length === 1) {
-    return delval = 0
+    delval = 0
+    return delval
   } else {
     const displayValue = delval.slice(0, -1)
-    return delval = displayValue
+    delval = displayValue
+    return delval
   }
 }
 
-function readValue(newval, disp_val) {
-  if (disp_val === '0') {
+function readValue (newval, dispVal) {
+  if (dispVal === '0') {
     return newval
   } else {
-    return disp_val += newval;
+    dispVal += newval
+    return dispVal
   }
 }
 
-function OpertnFunc(ans) {
+function OpertnFunc (ans) {
   let express = ans
-  return new Function(`return ${express}`)()
+  return new Function (`return ${express}`)()
 }
-

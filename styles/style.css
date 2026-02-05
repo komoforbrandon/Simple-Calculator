@@ -98,6 +98,16 @@ footer p {
     width: 100%;
   }
 
+  #answer {
+    width: 100%;
+    height: auto;
+  }
+
+  #input {
+    width: 100%;
+    height: auto;
+  }
+
   main section {
     width: 100%;
     margin: auto;
