@@ -60,6 +60,7 @@ tr td {
   text-align: center;
   color: #fff;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .header-btn td {
