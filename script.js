@@ -10,7 +10,7 @@ btns.forEach(btn => {
     } else if (newValue === '=') {
       const answer = OpertnFunc(display.textContent)
       answerElt.textContent = answer
-      display.textContent = parseInt(answerElt.textContent)
+      display.textContent = parseFloat(answerElt.textContent)
     } else if (newValue === 'del') {
       const delVal = delFunc(display.textContent)
       display.textContent = delVal
@@ -42,6 +42,8 @@ function readValue (newval, dispVal) {
 }
 
 function OpertnFunc (ans) {
-  const express = ans
-  return new Function(`return ${express}`)()
+  console.log(ans.split(''))
+  // eslint-disable-next-line no-eval
+  const express = eval(ans)
+  return express
 }

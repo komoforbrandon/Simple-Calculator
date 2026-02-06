@@ -33,16 +33,19 @@ main {
   text-align: end;
   color: #c0bdbd;
   font-size: 30px;
-  width: inherit;
+  width: 23rem;
   margin-right: 18px;
+  overflow: hidden;
+  overflow-wrap: anywhere;
 }
 
 #input {
   font-size: 35px;
   text-align: end;
   margin-right: 18px;
-  width: inherit;
+  width: 23rem;
   overflow: hidden;
+  overflow-wrap: anywhere;
 }
 
 table {
@@ -69,9 +72,8 @@ tr td {
 }
 
 td:hover {
-  transform: scale(1.06);
+  transform: scale(1.1);
   background-color: #2b2a2a;
-  box-shadow: 6px 2px 14px #2b2b2b;
 }
 
 tr td.operator {
@@ -81,14 +83,13 @@ tr td.operator {
 
 tr td.operator:hover {
   background-color: #ff9f0a;
-  box-shadow: 1px 2px 8px #ff9f0a;
 }
 
 footer p {
   width: 100%;
   margin: auto;
   text-align: center;
-  padding: 30px 0;
+  margin-top: 20px;
   color: #555;
   font-weight: 600;
 }
@@ -105,7 +106,6 @@ footer p {
 
   #input {
     width: 100%;
-    height: auto;
   }
 
   main section {
