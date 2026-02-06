@@ -1,11 +1,11 @@
 # Simple Calculator
-This is a simple calculator web app developed using **HTML, CSS** and **JS**. Users of the calculator can perform addition, division, substraction and modulo operations with the it.You Can try it.
+This is a simple calculator web app developed using **HTML, CSS** and **JS**. Users of the calculator can perform basic arithmetic operation like addition, division, substraction,multiplication and modulo operation with it.You Can try it 😉.
 
 ---
 ## Project Architecture
 ```text
-.Calculator
-|_assets/images
+.simple-calculator
+|_assets/exampleoutput.png
 |__styles/style.css
 |__index.html
 
