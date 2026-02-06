@@ -40,12 +40,12 @@ function readValue (newval, dispVal) {
       dispVal += newval
       return dispVal
     } else {
-      if(/[+\-*/]/.test(dispVal.at(-2))) {
+      if (/[+\-*/]/.test(dispVal.at(-2))) {
         dispVal = dispVal.slice(0, -2) + newval
       } else {
-    dispVal = dispVal.slice(0, -1) + newval
+        dispVal = dispVal.slice(0, -1) + newval
       }
-    return dispVal
+      return dispVal
     }
   } else {
     dispVal += newval
