@@ -35,6 +35,9 @@ function delFunc (delval) {
 function readValue (newval, dispVal) {
   if (dispVal === '0') {
     return newval
+  } else if (/[+\-*/]/.test(newval) && /[+\-*/]/.test(dispVal.at(-1))) {
+    dispVal = dispVal.slice(0, -1) + newval
+    return dispVal
   } else {
     dispVal += newval
     return dispVal
