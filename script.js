@@ -14,6 +14,12 @@ btns.forEach(btn => {
     } else if (newValue === 'del') {
       const delVal = delFunc(display.textContent)
       display.textContent = delVal
+    } else if (newValue === '+/-') {
+      if (display.textContent[0] === '-') {
+        display.textContent = display.textContent.slice(1)
+      } else {
+        display.textContent = '-' + display.textContent
+      }
     } else {
       const displayVal = readValue(newValue, display.textContent)
       display.textContent = displayVal
@@ -53,9 +59,63 @@ function readValue (newval, dispVal) {
   }
 }
 
-function OpertnFunc (ans) {
-  console.log(ans.split(''))
-  // eslint-disable-next-line no-eval
-  const express = eval(ans)
-  return express
+function OpertnFunc (expression) {
+  const result = evaluateExpression(expression);
+  function evaluateExpression(expr) {
+    const tokens = tokenize(expr);
+    const postfix = infixToPostfix(tokens);
+    return evaluatePostfix(postfix);
+  }
+
+  function tokenize(expr) {
+    return expr.match(/\d+(\.\d+)?|[+\-*/()]/g);
+  }
+
+  function infixToPostfix (tokens) {
+    const output = [];
+    const operators = [];
+    const precedence = { "+": 1, "-": 1, "*": 2, "/": 2 };
+
+    tokens.forEach(token => {
+      if (!isNaN(token)) {
+        output.push(token);
+      } else if (token in precedence) {
+        while (
+          operators.length &&
+          precedence[operators[operators.length - 1]] >= precedence[token]
+        ) {
+          output.push(operators.pop());
+        }
+        operators.push(token);
+      } 
+    });
+
+    while (operators.length) {
+      output.push(operators.pop());
+    }
+
+    return output;
+  }
+
+  function evaluatePostfix (postfix) {
+    const stack = [];
+
+    postfix.forEach(token => {
+      if (!isNaN(token)) {
+        stack.push(parseFloat(token));
+      } else {
+        const b = stack.pop();
+        const a = stack.pop();
+        switch (token) {
+          case "+": stack.push(a + b); break;
+          case "-": stack.push(a - b); break;
+          case "*": stack.push(a * b); break;
+          case "/": stack.push(a / b); break;
+        }
+      }
+    });
+
+    return stack.pop();
+  }
+  return parseFloat(result).toFixed(7);
 }
