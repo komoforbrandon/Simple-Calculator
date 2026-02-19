@@ -61,13 +61,13 @@ function readValue (newval, dispVal) {
 
 function OpertnFunc (expression) {
   const result = evaluateExpression(expression)
-  function evaluateExpression(expr) {
+  function evaluateExpression (expr) {
     const tokens = tokenize(expr)
     const postfix = infixToPostfix(tokens)
     return evaluatePostfix(postfix)
   }
 
-  function tokenize(expr) {
+  function tokenize (expr) {
     return expr.match(/\d+(\.\d+)?|[+\-*/()]/g)
   }
 
@@ -87,19 +87,18 @@ function OpertnFunc (expression) {
           output.push(operators.pop())
         }
         operators.push(token)
-      } 
-    });
+      }
+    })
 
     while (operators.length) {
       output.push(operators.pop())
     }
 
-    return output;
+    return output
   }
 
   function evaluatePostfix (postfix) {
     const stack = []
-
     postfix.forEach(token => {
       if (!isNaN(token)) {
         stack.push(parseFloat(token))
