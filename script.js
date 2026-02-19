@@ -60,21 +60,21 @@ function readValue (newval, dispVal) {
 }
 
 function OpertnFunc (expression) {
-  const result = evaluateExpression(expression);
+  const result = evaluateExpression(expression)
   function evaluateExpression(expr) {
-    const tokens = tokenize(expr);
-    const postfix = infixToPostfix(tokens);
-    return evaluatePostfix(postfix);
+    const tokens = tokenize(expr)
+    const postfix = infixToPostfix(tokens)
+    return evaluatePostfix(postfix)
   }
 
   function tokenize(expr) {
-    return expr.match(/\d+(\.\d+)?|[+\-*/()]/g);
+    return expr.match(/\d+(\.\d+)?|[+\-*/()]/g)
   }
 
   function infixToPostfix (tokens) {
     const output = []
     const operators = []
-    const precedence = { "+": 1, "-": 1, "*": 2, "/": 2 };
+    const precedence = { '+': 1, '-': 1, '*': 2, '/': 2 }
 
     tokens.forEach(token => {
       if (!isNaN(token)) {
@@ -98,7 +98,7 @@ function OpertnFunc (expression) {
   }
 
   function evaluatePostfix (postfix) {
-    const stack = [];
+    const stack = []
 
     postfix.forEach(token => {
       if (!isNaN(token)) {
@@ -107,15 +107,15 @@ function OpertnFunc (expression) {
         const b = stack.pop()
         const a = stack.pop()
         switch (token) {
-          case "+": stack.push(a + b); break
-          case "-": stack.push(a - b); break
-          case "*": stack.push(a * b); break
-          case "/": stack.push(a / b); break
+          case '+': stack.push(a + b); break
+          case '-': stack.push(a - b); break
+          case '*': stack.push(a * b); break
+          case '/': stack.push(a / b); break
         }
       }
     })
 
     return stack.pop()
   }
-  return result;
+  return result
 }
