@@ -72,26 +72,26 @@ function OpertnFunc (expression) {
   }
 
   function infixToPostfix (tokens) {
-    const output = [];
-    const operators = [];
+    const output = []
+    const operators = []
     const precedence = { "+": 1, "-": 1, "*": 2, "/": 2 };
 
     tokens.forEach(token => {
       if (!isNaN(token)) {
-        output.push(token);
+        output.push(token)
       } else if (token in precedence) {
         while (
           operators.length &&
           precedence[operators[operators.length - 1]] >= precedence[token]
         ) {
-          output.push(operators.pop());
+          output.push(operators.pop())
         }
-        operators.push(token);
+        operators.push(token)
       } 
     });
 
     while (operators.length) {
-      output.push(operators.pop());
+      output.push(operators.pop())
     }
 
     return output;
@@ -102,20 +102,20 @@ function OpertnFunc (expression) {
 
     postfix.forEach(token => {
       if (!isNaN(token)) {
-        stack.push(parseFloat(token));
+        stack.push(parseFloat(token))
       } else {
-        const b = stack.pop();
-        const a = stack.pop();
+        const b = stack.pop()
+        const a = stack.pop()
         switch (token) {
-          case "+": stack.push(a + b); break;
-          case "-": stack.push(a - b); break;
-          case "*": stack.push(a * b); break;
-          case "/": stack.push(a / b); break;
+          case "+": stack.push(a + b); break
+          case "-": stack.push(a - b); break
+          case "*": stack.push(a * b); break
+          case "/": stack.push(a / b); break
         }
       }
-    });
+    })
 
-    return stack.pop();
+    return stack.pop()
   }
-  return parseFloat(result).toFixed(7);
+  return result;
 }
