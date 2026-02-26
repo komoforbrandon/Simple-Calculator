@@ -14,12 +14,12 @@ btns.forEach(btn => {
     } else if (newValue === '=') {
       num2 = Number(answerElt.textContent)
       console.log('Information', num1, num2, operator)
-      const answer = OpertnFunc (num1, num2, operator)
+      const answer = OpertnFunc(num1, num2, operator)
       answerElt.textContent = answer
-      num1 = Number (answerElt.textContent)
-      display.textContent = parseFloat (answerElt.textContent)
+      num1 = Number(answerElt.textContent)
+      display.textContent = parseFloat(answerElt.textContent)
     } else if (newValue === 'del') {
-      const delVal = delFunc (answerElt.textContent)
+      const delVal = delFunc(answerElt.textContent)
       answerElt.textContent = delVal
     } else if (newValue === '+/-') {
       if (answerElt.textContent[0] === '-') {
@@ -28,11 +28,11 @@ btns.forEach(btn => {
         answerElt.textContent = '-' + answerElt.textContent
       }
     } else if (/[+\-*%/]/.test(newValue)) {
-       if (num1 === 0) {
+      if (num1 === 0) {
         num1 = Number(answerElt.textContent)
-       } 
-       operator = newValue
-       answerElt.textContent = ''
+      }
+      operator = newValue
+      answerElt.textContent = ''
     } else {
       const displayVal = readValue(newValue, answerElt.textContent)
       answerElt.textContent = displayVal
@@ -61,15 +61,15 @@ function readValue (newval, dispVal) {
 }
 
 function OpertnFunc (num1, num2, operator) {
-   if (operator === '+') {
+  if (operator === '+') {
     return num1 + num2
-   } else if (operator === '-') {
+  } else if (operator === '-') {
     return num1 - num2
-   } else if (operator === '*') {
+  } else if (operator === '*') {
     return num1 * num2
-   } else if (operator === '/') {
+  } else if (operator === '/') {
     return num1 / num2
-   } else if (operator === '%') {
+  } else if (operator === '%') {
     return num1 % num2
-   }
+  }
 }
