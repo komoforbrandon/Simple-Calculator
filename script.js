@@ -1,28 +1,39 @@
 const btns = document.querySelectorAll('.btn')
 const display = document.getElementById('input')
 const answerElt = document.getElementById('answer')
+let num1 = 0, num2 = 0, operator = 0
 btns.forEach(btn => {
   btn.addEventListener('click', () => {
     const newValue = btn.dataset.value
     if (newValue === 'AC') {
       display.textContent = 0
       answerElt.textContent = 0
+      num1 = num2 = 0
     } else if (newValue === '=') {
-      const answer = OpertnFunc(display.textContent)
+      num2 = Number(answerElt.textContent)
+      console.log('Information', num1, num2, operator)
+      const answer = OpertnFunc(num1, num2, operator)
       answerElt.textContent = answer
+      num1 = Number (answerElt.textContent)
       display.textContent = parseFloat(answerElt.textContent)
     } else if (newValue === 'del') {
-      const delVal = delFunc(display.textContent)
-      display.textContent = delVal
+      const delVal = delFunc(answerElt.textContent)
+      answerElt.textContent = delVal
     } else if (newValue === '+/-') {
-      if (display.textContent[0] === '-') {
-        display.textContent = display.textContent.slice(1)
+      if (answerElt.textContent[0] === '-') {
+        answerElt.textContent = answerElt.textContent.slice(1)
       } else {
-        display.textContent = '-' + display.textContent
+        answerElt.textContent = '-' + answerElt.textContent
       }
+    } else if (/[+\-*/]/.test(newValue)) {
+       if (num1 === 0) {
+        num1 = Number(answerElt.textContent)
+       } 
+       operator = newValue
+       answerElt.textContent = ''
     } else {
-      const displayVal = readValue(newValue, display.textContent)
-      display.textContent = displayVal
+      const displayVal = readValue(newValue, answerElt.textContent)
+      answerElt.textContent = displayVal
     }
   })
 })
@@ -59,62 +70,16 @@ function readValue (newval, dispVal) {
   }
 }
 
-function OpertnFunc (expression) {
-  const result = evaluateExpression(expression)
-  function evaluateExpression (expr) {
-    const tokens = tokenize(expr)
-    const postfix = infixToPostfix(tokens)
-    return evaluatePostfix(postfix)
-  }
-
-  function tokenize (expr) {
-    return expr.match(/\d+(\.\d+)?|[+\-*/()]/g)
-  }
-
-  function infixToPostfix (tokens) {
-    const output = []
-    const operators = []
-    const precedence = { '+': 1, '-': 1, '*': 2, '/': 2 }
-
-    tokens.forEach(token => {
-      if (!isNaN(token)) {
-        output.push(token)
-      } else if (token in precedence) {
-        while (
-          operators.length &&
-          precedence[operators[operators.length - 1]] >= precedence[token]
-        ) {
-          output.push(operators.pop())
-        }
-        operators.push(token)
-      }
-    })
-
-    while (operators.length) {
-      output.push(operators.pop())
-    }
-
-    return output
-  }
-
-  function evaluatePostfix (postfix) {
-    const stack = []
-    postfix.forEach(token => {
-      if (!isNaN(token)) {
-        stack.push(parseFloat(token))
-      } else {
-        const b = stack.pop()
-        const a = stack.pop()
-        switch (token) {
-          case '+': stack.push(a + b); break
-          case '-': stack.push(a - b); break
-          case '*': stack.push(a * b); break
-          case '/': stack.push(a / b); break
-        }
-      }
-    })
-
-    return stack.pop()
-  }
-  return result
+function OpertnFunc (num1, num2, operator) {
+   if (operator === '+') {
+    return num1 + num2
+   } else if (operator === '-') {
+    return num1 - num2
+   } else if (operator === '*') {
+    return num1 * num2
+   } else if (operator === '/') {
+    return num1 / num2
+   } else if (operator === '%') {
+    return num1 % num2
+   }
 }
