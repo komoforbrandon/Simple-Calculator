@@ -30,16 +30,17 @@ main {
 }
 
 #answer {
+  margin: auto;
   text-align: end;
   color: #f1f1f1;
   font-size: 46px;
-  width: 22rem;
-  margin-right: 18px;
+  width: 87%;
+  margin-right: 40px;
   overflow: hidden;
   overflow-wrap: anywhere;
   height: 48px;
-  padding: 3px;
-  font-weight: 400;
+  padding: 30px;
+  font-weight: 370;
 }
 
 #input {
@@ -62,16 +63,17 @@ tr td {
   padding: 27px;
   width: 35px;
   font-size: 21px;
-  height: 33px;
+  height: 35px;
   border-radius: 50%;
   text-align: center;
   color: #fff;
   font-weight: 500;
   cursor: pointer;
+  border: 2px solid #000;
 }
 
 .header-btn td {
-  background-color: #555;
+  background-color: #696666;
   font-size: 23px;
 }
 
@@ -104,7 +106,7 @@ footer p {
   }
 
   #answer {
-    width: 100%;
+    width: 86%;
     height: auto;
   }
 
