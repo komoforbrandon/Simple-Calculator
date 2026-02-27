@@ -62,14 +62,10 @@ function readValue (newval, dispVal) {
 function OpertnFunc (expression) {
   const result = evaluateExpression (expression)
   function evaluateExpression(expr) {
-    console.log('This is the expression', expr)
     const normalize = normaliseExpr(expr)
     const arrOfChar = strToArr(normalize)
-        console.log('This is the return value before MultSub:', arrOfChar)
     const calMultDiv = perfMultDiv(arrOfChar)
-    console.log('This is the return value before addSub:', calMultDiv)
     const calAddSub = perfAddSub(calMultDiv)
-    console.log('Return Array is : ', calAddSub)
     return calAddSub[0];
   }
 
