@@ -60,55 +60,53 @@ function readValue (newval, dispVal) {
 }
 
 function OpertnFunc (expression) {
-  const result = evaluateExpression (expression)
-  function evaluateExpression(expr) {
+  const result = evaluateExpression(expression)
+  function evaluateExpression (expr) {
     const normalize = normaliseExpr(expr)
     const arrOfChar = strToArr(normalize)
     const calMultDiv = perfMultDiv(arrOfChar)
     const calAddSub = perfAddSub(calMultDiv)
-    return calAddSub[0];
+    return calAddSub[0]
   }
 
   function normaliseExpr (expr) {
-    let x = expr.replace(/\+-/g, '-')
+    const x = expr.replace(/\+-/g, '-')
     return x
   }
 
   function strToArr (expr) {
-    let x = expr.match(/\d+(\.\d+)?|[+\-*%/()]/g)
-    let normArr = []
+    const x = expr.match(/\d+(\.\d+)?|[+\-*%/()]/g)
+    const normArr = []
     for (let i = 0; i < x.length; i++) {
       if (i === 0 && x[i] === '-') {
-        let negNum = '-' + x[i + 1]
+        const negNum = '-' + x[i + 1]
         normArr.push(Number(negNum))
         i++
       } else if ((x[i] === '*' || x[i] === '/') && x[i + 1] === '-' && !isNaN(x[i + 2])) {
         normArr.push(x[i])
-        let negNum = '-' + x[i + 2]
+        const negNum = '-' + x[i + 2]
         normArr.push(Number(negNum))
         i += 2
-      }
-      else if (!isNaN(x[i])) {
+      } else if (!isNaN(x[i])) {
         normArr.push(Number(x[i]))
-      }
-      else {
+      } else {
         normArr.push(x[i])
       }
     }
-    return normArr;
+    return normArr
   }
 
   function perfMultDiv (x) {
     let i = 0
     while (i < x.length) {
       if (x[i] === '*') {
-        let multValue = x[i - 1] * x[i + 1]
+        const multValue = x[i - 1] * x[i + 1]
         x.splice(i - 1, 3, multValue)
       } else if (x[i] === '/') {
-        let multValue = x[i - 1] / x[i + 1]
-        x.splice(i - 1, 3, multValue)
+        const diValue = x[i - 1] / x[i + 1]
+        x.splice(i - 1, 3, diValue)
       } else if (x[i] === '%') {
-        let modValue = x[i - 1] %  x[i + 1]
+        const modValue = x[i - 1] % x[i + 1]
         x.splice(i - 1, 3, modValue)
       } else {
         i++
@@ -121,16 +119,16 @@ function OpertnFunc (expression) {
     let i = 0
     while (i < x.length) {
       if (x[i] === '+') {
-        let addValue = x[i - 1] + x[i + 1]
+        const addValue = x[i - 1] + x[i + 1]
         x.splice(i - 1, 3, addValue)
       } else if (x[i] === '-') {
-        let subValue = x[i - 1] - x[i + 1]
+        const subValue = x[i - 1] - x[i + 1]
         x.splice(i - 1, 3, subValue)
       } else {
         i++
       }
     }
-    return x;
+    return x
   }
   return result
 }
