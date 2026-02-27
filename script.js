@@ -65,6 +65,7 @@ function OpertnFunc (expression) {
     console.log('This is the expression', expr)
     const normalize = normaliseExpr(expr)
     const arrOfChar = strToArr(normalize)
+        console.log('This is the return value before MultSub:', arrOfChar)
     const calMultDiv = perfMultDiv(arrOfChar)
     console.log('This is the return value before addSub:', calMultDiv)
     const calAddSub = perfAddSub(calMultDiv)
@@ -78,7 +79,7 @@ function OpertnFunc (expression) {
   }
 
   function strToArr (expr) {
-    let x = expr.match(/\d+(\.\d+)?|[+\-*/()]/g)
+    let x = expr.match(/\d+(\.\d+)?|[+\-*%/()]/g)
     let normArr = []
     for (let i = 0; i < x.length; i++) {
       if (i === 0 && x[i] === '-') {
@@ -111,7 +112,7 @@ function OpertnFunc (expression) {
         let multValue = x[i - 1] / x[i + 1]
         x.splice(i - 1, 3, multValue)
       } else if (x[i] === '%') {
-        let modValue = x[i - 1] % x[i + 1]
+        let modValue = x[i - 1] %  x[i + 1]
         x.splice(i - 1, 3, modValue)
       } else {
         i++
