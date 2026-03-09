@@ -42,12 +42,11 @@ main {
   text-align: end;
   color: #f1f1f1;
   font-size: 46px;
-  width: 87%;
+  width: 23rem;
   margin-right: 10px;
   overflow: hidden;
-  overflow-wrap: anywhere;
   height: 48px;
-  padding: 10px;
+  padding: 15px;
   font-weight: 370;
 }
 
@@ -55,9 +54,8 @@ main {
   margin: auto;
   text-align: end;
   font-size: 35px;
-  width: 88%;
+  width: 23rem;
   overflow: hidden;
-  overflow-wrap: anywhere;
   height: 48px;
   padding: 10px;
   font-weight: 370;

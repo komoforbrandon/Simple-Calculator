@@ -10,7 +10,6 @@ btns.forEach(btn => {
     } else if (newValue === '=') {
       const answer = OpertnFunc(display.textContent)
       answerElt.textContent = answer
-      display.textContent = parseFloat(answerElt.textContent)
     } else if (newValue === 'del') {
       const delVal = delFunc(display.textContent)
       display.textContent = delVal
