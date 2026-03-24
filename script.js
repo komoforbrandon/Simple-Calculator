@@ -106,7 +106,7 @@ function OpertnFunc (expression) {
         x.splice(i - 1, 3, diValue)
       } else if (x[i] === '%') {
         if (x[i + 1] != undefined || x[i + 1] != null) {
-          const modValue = (x[i - 1] / 100) / (x[i + 1])
+          const modValue = (x[i - 1] / 100) * (x[i + 1])
           x.splice(i - 1, 3, modValue)
         } else {
           const modValue = x[i - 1] / 100
