@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #fff;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0a0a0abe;
+  margin: auto;
+}
+
+.mobile-container {
+  background-color: #000;
+  margin: auto;
+  width: fit-content;
+  padding: 2px;
+  border-radius: 8px;
+}
+
+header {
+  width: 23rem;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+header img {
+  width: 40px;
+  height: fit-content;
+  cursor: pointer;
+}
+
+main {
+  width: fit-content;
+  margin: auto;
+  color: #fff;
+  line-height: 28px;
+}
+
+#answer {
+  margin: auto;
+  text-align: end;
+  color: #f1f1f1;
+  font-size: 46px;
+  width: 23rem;
+  margin-right: 10px;
+  overflow: hidden;
+  height: 48px;
+  padding: 15px;
+  font-weight: 370;
+}
+
+#input {
+  margin: auto;
+  text-align: end;
+  font-size: 35px;
+  width: 23rem;
+  overflow: hidden;
+  height: 48px;
+  padding: 10px;
+  font-weight: 370;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 6px;
+}
+
+tr td {
+  background-color: #353535f1;
+  padding: 27px;
+  width: 35px;
+  font-size: 21px;
+  height: 35px;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid #16161696;
+  outline: 2px ridge #0000001f;
+  box-shadow: 2px 2px 2px #525151;
+}
+
+.header-btn td {
+  background-color: #696666;
+  font-size: 23px;
+  border: 2px solid #302e2ebe;
+  outline: 2px ridge #3330301f;
+}
+
+td:hover {
+  transform: scale(1.03);
+  background-color: #2b2a2a;
+}
+
+td:active {
+  transform: scale(0.89);
+}
+
+tr td.operator {
+  border: 2px solid #492c01c9;
+  background-color: #f7a326;
+  width: 35px;
+}
+
+tr td.operator:hover {
+  background-color: #ff9f0a;
+}
+
+footer p {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  margin-top: 20px;
+  color: #555;
+  font-weight: 600;
+}
+
+@media (max-width: 380px) {
+  body {
+    margin: -8px;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  #answer {
+    width: 86%;
+    height: auto;
+  }
+
+  #input {
+    width: 85%;
+  }
+
+  main section {
+    width: 100%;
+    margin: auto;
+  }
+
+  tr td {
+    width: 35px !important;
+    font-size: 18px;
+    height: 28px !important;
+    font-weight: 600;
+    padding: 20px;
+  }
+
+  .header-btn td {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
